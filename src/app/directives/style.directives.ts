@@ -1,10 +1,12 @@
-import {Directive} from "@angular/core";
+import {Directive, ElementRef, Renderer2} from "@angular/core";
 
 @Directive({
   selector: '[appStyle]'
 })
 
 export class StyleDirectives {
-  constructor() {
+  constructor(private el:ElementRef, private renderer: Renderer2) {
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'green')
+
   }
 }
