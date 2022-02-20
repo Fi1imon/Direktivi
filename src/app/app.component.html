@@ -1,11 +1,25 @@
 <section>
-<div>
+<div class="container">
 
   <h1>BuZZ</h1>
 
-  <p appStyle="red" fontWeight="bold">Helllo MOOOOONKEYYZ</p>
-  <p appStyle="blue" fontWeight="lighter">Helllo MOOOOONKEYYZ</p>
+  <p appStyle="red" [fontWeight]="'bold'">Helllo MOOOOONKEYYZ</p>
+  <p
+    appStyle="blue"
+    [fontWeight]="'lighter'"
+    (mouseenter)="isVisible = !isVisible"
+    (mouseleave)="isVisible = !isVisible"
+  >Helllo MOOOOONKEYYZ</p>
 
+  <button class="btn" (click)="isVisible = !isVisible">Click me!</button>
+
+<!--  <div *ngIf="isVisible" class="wrap">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo.</p>-->
+<!--  </div>-->
+
+  <div *appIfnot="!isVisible" class="wrap">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo.</p>
+  </div>
 </div>
 </section>
 
