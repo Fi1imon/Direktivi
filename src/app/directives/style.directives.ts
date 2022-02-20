@@ -1,10 +1,14 @@
-import {Directive, ElementRef, HostListener, Renderer2} from "@angular/core";
+import {Directive, ElementRef, HostListener,Input, Renderer2} from "@angular/core";
 
 @Directive({
   selector: '[appStyle]'
 })
 
 export class StyleDirectives {
+
+  @Input('appStyle') color: string = 'blue'
+  @Input() fontWeight = 'normal'
+
   constructor(private el:ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(this.el.nativeElement, 'color', 'green')
 
@@ -15,11 +19,13 @@ export class StyleDirectives {
   }
 
   @HostListener('mouseenter') onEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'color', 'blue')
+    this.renderer.setStyle(this.el.nativeElement, 'color', this.color)
+    this.renderer.setStyle(this.el.nativeElement, 'fontWeight', this.fontWeight)
   }
 
   @HostListener('mouseleave') offEnter() {
     this.renderer.setStyle(this.el.nativeElement, 'color', null)
+    this.renderer.setStyle(this.el.nativeElement, 'fontWeight', null)
   }
 }
 
