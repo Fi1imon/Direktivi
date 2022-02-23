@@ -1,25 +1,24 @@
 <section>
 <div class="container">
 
-  <h1>BuZZ</h1>
+  <h1>Pipes(Пипки)</h1>
 
-  <p appStyle="red" [fontWeight]="'bold'">Helllo MOOOOONKEYYZ</p>
-  <p
-    appStyle="blue"
-    [fontWeight]="'lighter'"
-    (mouseenter)="isVisible = !isVisible"
-    (mouseleave)="isVisible = !isVisible"
-  >Helllo MOOOOONKEYYZ</p>
+  <p>
+    {{2 | mult}}
+  </p>
+  <p>
+    {{2 | mult}}
+  </p>
+  <p>
+    {{8 | mult:18}}
+  </p>
 
-  <button class="btn" (click)="isVisible = !isVisible">Click me!</button>
 
-<!--  <div *ngIf="isVisible" class="wrap">-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo.</p>-->
-<!--  </div>-->
 
-  <div *appIfnot="!isVisible" class="wrap">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, illo.</p>
-  </div>
+  <p>
+    {{'Good Night White Pride   ' | preMarks}}
+  </p>
+
 </div>
 </section>
 

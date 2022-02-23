@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
-import {StyleDirectives} from "./directives/style.directives";
-import { Style228Directive } from './style228.directive';
-import { IfnotDirective } from './directives/ifnot.directive';
+import {MyOwnPipe} from "./pipes/my-own.pipe";
+import { PreMarksPipe } from './pipes/pre-marks.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StyleDirectives,
-    Style228Directive,
-    IfnotDirective
+    MyOwnPipe,
+    PreMarksPipe
   ],
   imports: [
     BrowserModule,
